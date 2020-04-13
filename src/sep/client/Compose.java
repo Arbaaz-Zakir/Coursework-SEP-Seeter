@@ -1,3 +1,5 @@
+package sep.client;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,7 +10,7 @@
  *
  * @author Arbaaz Zakir
  */
-public class Fetch implements Command{
+public class Compose implements Command{
 
     @Override
     public void execute() {
