@@ -29,6 +29,19 @@ public class SeeterModel extends AbstractModel{
         this.port = port;
     
     }
+    
+    public String getUser(){
+        return user;
+    }
+    
+    public String getHost(){
+        return host;
+    }
+    
+    public int getPort(){
+        return port;
+    }
+    
     public String getState(){
         return state.toString();
     }
@@ -41,4 +54,7 @@ public class SeeterModel extends AbstractModel{
         state = State.MAIN;
     }
     
+    public void setStateTerminated(){
+        state = State.TERMINATED;
+    }
 }
