@@ -6,16 +6,19 @@
 package sep.client;
 import java.util.LinkedList;
 import java.util.List;
+import static sep.client.State.*;
 import sep.mvc.AbstractModel;
 /**
  *
  * @author Arbaaz Zakir
  */
 public class SeeterModel extends AbstractModel{
+    //enum States{MAIN, DRAFTING, TERMINATED}
+    
     private String user;
     private String host;
     private int port;
-    private String state = "Main";
+    private State state = State.MAIN;
     
 //    String draftTopic = null;
 //    List<String> draftLines = new LinkedList<>();
@@ -27,15 +30,15 @@ public class SeeterModel extends AbstractModel{
     
     }
     public String getState(){
-        return state;
+        return state.toString();
     }
     
     public void setStateDrafting(){
-        state = "Drafting";
+        state = State.DRAFTING;
     }
     
     public void setStateMain(){
-        state = "Main";
+        state = State.MAIN;
     }
     
 }

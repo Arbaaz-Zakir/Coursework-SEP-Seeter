@@ -11,10 +11,16 @@ package sep.client;
  */
 public enum State {
     DRAFTING(" Drafting"), MAIN(" Main"), TERMINATED(" Terminated");
+
     
     private String state;
     
-    private State(String state){
-        this.state = state;
+    private State(String st){
+        state = st;
+        
     }
+    
+    public String toString() {
+        return state;
+    }    
 }
