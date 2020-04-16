@@ -13,6 +13,8 @@ import sep.mvc.AbstractView;
 public class SeeterView extends AbstractView{
     
     
+    private String IOException = "Input stream closed while reading.";
+    private String failParse = "Could not parse command/args.";
     
     
     
