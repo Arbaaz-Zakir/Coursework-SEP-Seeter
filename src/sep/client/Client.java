@@ -90,6 +90,21 @@ public class Client {
     this.host = host;
     this.port = port;
   }
+  
+  public String getUser(){
+    return user;
+  }
+  public String getHost(){
+    return host;
+  }
+  public int getPort(){
+    return port;
+  }
+  
+  
+  
+  
+  
 
   // Run the client
   @SuppressFBWarnings(
