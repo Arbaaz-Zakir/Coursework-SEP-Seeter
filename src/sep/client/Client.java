@@ -77,12 +77,20 @@ public class Client {
   }
 
   public static void main(String[] args) throws IOException {
+    SeeterModel model = new SeeterModel();
+    SeeterView view = new SeeterView();
     String user = args[0];
     String host = args[1];
     int port = Integer.parseInt(args[2]);
-    Client client = new Client();
-    client.set(user, host, port);
-    client.run();
+//    Client client = new Client();
+//    client.set(user, host, port);
+//    client.run();
+    
+    model.set(user, host, port);
+    SeeterController controller = new SeeterController(model, view);
+    
+    view.run();
+    
   }
 
   public void set(String user, String host, int port) {

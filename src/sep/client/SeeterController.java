@@ -4,16 +4,38 @@
  * and open the template in the editor.
  */
 package sep.client;
+
 import sep.mvc.AbstractController;
+
 /**
  *
  * @author Arbaaz Zakir
  */
-public class SeeterController {
+public class SeeterController extends AbstractController{
     private SeeterModel model;
     private SeeterView view;
+     String name;
+     String host;
+     int port;
     
-  //  AbstractController(model, view);
+    public SeeterController(SeeterModel model, SeeterView view){
+        super(model, view);
+    }
+
+//    public void setDetails(String name, String host, int port){
+//        this.name = model.getUser();
+//        this.host = model.getHost();
+//        this.port = model.getPort();
+//        this.model.set(name, host, port);
+//    }
     
-    
+    public SeeterModel getModel(){
+        return model;
+    }
+
+    @Override
+    public void shutdown() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+      
 }
