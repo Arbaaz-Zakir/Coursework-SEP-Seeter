@@ -29,10 +29,15 @@ public class SeeterController extends AbstractController{
 //        this.model.set(name, host, port);
 //    }
     
+    @Override
     public SeeterModel getModel(){
         return model;
     }
-
+    @Override
+    public SeeterView getView(){
+        return view;
+    }
+    
     @Override
     public void shutdown() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

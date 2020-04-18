@@ -89,7 +89,7 @@ public class Client {
     model.set(user, host, port);
     SeeterController controller = new SeeterController(model, view);
     
-    view.run();
+    controller.getView().run();
     
   }
 
