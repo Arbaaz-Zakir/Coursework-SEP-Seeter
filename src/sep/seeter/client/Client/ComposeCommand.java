@@ -10,14 +10,15 @@ package sep.seeter.client.Client;
  * @author Arbaaz Zakir
  */
 public class ComposeCommand implements Command{
-    private String draftTopic;
+    private SeeterModel model;
     
     public ComposeCommand(String draftTopic){
-        this.draftTopic = draftTopic;
+        this.model = model;
     }
     @Override
     public void execute() {
-        
+         model.setStateDrafting();
+         model.setDraftTopic(model.getRawArgs()[0]);
     }
     
 }

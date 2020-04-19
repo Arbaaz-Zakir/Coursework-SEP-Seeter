@@ -121,11 +121,13 @@ public class SeeterView extends AbstractView{
           controller.getModel().setDraftTopic(rawArgs[0]);
         } else if ("fetch".startsWith(cmd)) {
           // Fetch seets from server
+          Command fetch = new CommandWords(controller.getModel()).getCommand(cmd);
+          fetch.execute();
           
-          helper.chan.send(new SeetsReq(rawArgs[0]));
-          SeetsReply rep = (SeetsReply) helper.chan.receive();
-          System.out.print(
-              helper.formatFetched(rawArgs[0], rep.users, rep.lines));
+//          helper.chan.send(new SeetsReq(rawArgs[0]));
+//          SeetsReply rep = (SeetsReply) helper.chan.receive();
+//          System.out.print(
+//              helper.formatFetched(rawArgs[0], rep.users, rep.lines));
         } else {
           System.out.println("Could not parse command/args.");
         }
@@ -133,6 +135,9 @@ public class SeeterView extends AbstractView{
       else if (controller.getModel().getState()== State.DRAFTING) {
         if ("body".startsWith(cmd)) {
           // Add a seet body line
+          Command body = new CommandWords(controller.getModel()).getCommand(cmd);
+          body.execute();
+          
           String line = Arrays.stream(rawArgs).
               collect(Collectors.joining());
           controller.getModel().addDraftLines(line);

@@ -36,7 +36,10 @@ public class FetchCommand implements Command{
         catch(Exception ex){
             throw new RuntimeException();
         }
-     } 
+     }
+    public void setModel(SeeterModel model){
+        this.model = model;
+    }
     
     
     

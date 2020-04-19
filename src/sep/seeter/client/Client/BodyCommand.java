@@ -5,15 +5,25 @@
  */
 package sep.seeter.client.Client;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 /**
  *
  * @author Arbaaz Zakir
  */
 public class BodyCommand implements Command{
+    
+    private SeeterModel model;
 
+    public BodyCommand(SeeterModel model){
+        this.model = model;
+    }
     @Override
     public void execute() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String Line = Arrays.stream(model.getRawArgs()).
+                collect(Collectors.joining());
+        model.addDraftLines(Line);
+        
     }
-    
 }

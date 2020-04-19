@@ -14,11 +14,12 @@ import java.util.Map;
  */
 public class CommandWords {
     private Map<String, Command> commands = new HashMap<>(); 
-    
+    //dangerous comeback to this
     private SeeterModel model;
-    public CommandWords(){
+    public CommandWords(SeeterModel m){
         commands.put("exit", new ExitCommand());
-        commands.put("fetch", new FetchCommand(model));
+        commands.put("fetch", new FetchCommand(this.model = m));
+        commands.put("body", new BodyCommand(this.model = m));
     }
     
     public Command getCommand (String cmd){
