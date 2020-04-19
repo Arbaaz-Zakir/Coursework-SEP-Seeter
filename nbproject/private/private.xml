@@ -3,12 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Arbaaz%20Zakir/Documents/a%20University%20of%20Herts/CS3/SEP/seeter_final_cw/cw1-SEP/seeter-mvc-branch/Coursework-SEP-Seeter/src/sep/client/SeeterModel.java</file>
+            <file>file:/C:/Users/Arbaaz%20Zakir/Documents/a%20University%20of%20Herts/CS3/SEP/seeter_final_cw/cw1-SEP/seeter-mvc-branch/Coursework-SEP-Seeter/src/sep/seeter/client/Client/SeeterController.java</file>
             <file>file:/C:/Users/Arbaaz%20Zakir/Documents/a%20University%20of%20Herts/CS3/SEP/seeter_final_cw/cw1-SEP/seeter-mvc-branch/Coursework-SEP-Seeter/src/sep/mvc/AbstractView.java</file>
-            <file>file:/C:/Users/Arbaaz%20Zakir/Documents/a%20University%20of%20Herts/CS3/SEP/seeter_final_cw/cw1-SEP/seeter-mvc-branch/Coursework-SEP-Seeter/src/sep/client/SeeterController.java</file>
-            <file>file:/C:/Users/Arbaaz%20Zakir/Documents/a%20University%20of%20Herts/CS3/SEP/seeter_final_cw/cw1-SEP/seeter-mvc-branch/Coursework-SEP-Seeter/src/sep/client/Client.java</file>
+            <file>file:/C:/Users/Arbaaz%20Zakir/Documents/a%20University%20of%20Herts/CS3/SEP/seeter_final_cw/cw1-SEP/seeter-mvc-branch/Coursework-SEP-Seeter/src/sep/seeter/server/Server.java</file>
+            <file>file:/C:/Users/Arbaaz%20Zakir/Documents/a%20University%20of%20Herts/CS3/SEP/seeter_final_cw/cw1-SEP/seeter-mvc-branch/Coursework-SEP-Seeter/src/sep/seeter/client/Client/Client.java</file>
+            <file>file:/C:/Users/Arbaaz%20Zakir/Documents/a%20University%20of%20Herts/CS3/SEP/seeter_final_cw/cw1-SEP/seeter-mvc-branch/Coursework-SEP-Seeter/src/sep/seeter/client/Client/NewMain.java</file>
             <file>file:/C:/Users/Arbaaz%20Zakir/Documents/a%20University%20of%20Herts/CS3/SEP/seeter_final_cw/cw1-SEP/seeter-mvc-branch/Coursework-SEP-Seeter/src/sep/mvc/AbstractController.java</file>
-            <file>file:/C:/Users/Arbaaz%20Zakir/Documents/a%20University%20of%20Herts/CS3/SEP/seeter_final_cw/cw1-SEP/seeter-mvc-branch/Coursework-SEP-Seeter/src/sep/client/SeeterView.java</file>
+            <file>file:/C:/Users/Arbaaz%20Zakir/Documents/a%20University%20of%20Herts/CS3/SEP/seeter_final_cw/cw1-SEP/seeter-mvc-branch/Coursework-SEP-Seeter/src/sep/seeter/client/Client/SeeterView.java</file>
+            <file>file:/C:/Users/Arbaaz%20Zakir/Documents/a%20University%20of%20Herts/CS3/SEP/seeter_final_cw/cw1-SEP/seeter-mvc-branch/Coursework-SEP-Seeter/src/sep/seeter/client/Client/SeeterModel.java</file>
         </group>
     </open-files>
 </project-private>
