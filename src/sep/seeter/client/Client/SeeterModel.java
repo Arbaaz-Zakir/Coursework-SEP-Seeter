@@ -4,8 +4,10 @@
  * and open the template in the editor.
  */
 package sep.seeter.client.Client;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 import sep.mvc.AbstractModel;
 /**
  *
@@ -13,12 +15,14 @@ import sep.mvc.AbstractModel;
  */
 public class SeeterModel extends AbstractModel{
     //enum States{MAIN, DRAFTING, TERMINATED}
+    private String[] rawArgs;
+    String cmd;
     
     private String user;
     private String host;
     private int port;
     private State state = State.MAIN;
-    Client client;
+    //Client client;
     
     String draftTopic;
     List<String> draftLines = new LinkedList<>();
@@ -72,5 +76,21 @@ public class SeeterModel extends AbstractModel{
     }
     public void setDraftTopic(String draftTopic){
         this.draftTopic = draftTopic;
+    }
+//    public void addArgs(String args){
+//        this.args = args;
+//    }
+    
+    public void splitInput(String raw){
+      List<String> split = Arrays.stream(raw.trim().split("\\ "))
+          .map(x -> x.trim()).collect(Collectors.toList());
+      cmd = split.remove(0);  // First word is the command keyword
+      rawArgs = split.toArray(new String[split.size()]);
+    }
+    public String getCmd(){
+        return cmd;
+    }
+    public String[] getRawArgs(){
+        return rawArgs;
     }
 }

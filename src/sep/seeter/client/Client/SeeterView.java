@@ -23,6 +23,9 @@ import sep.seeter.net.message.SeetsReq;
  * @author Arbaaz Zakir
  */
 public class SeeterView extends AbstractView{
+//    String user = args[0];
+//    String host = args[1];
+//    int port = Integer.parseInt(args[2]);
     private BufferedReader reader = null;
     
     private SeeterController controller;
@@ -97,10 +100,13 @@ public class SeeterView extends AbstractView{
         throw new IOException("Input stream closed while reading.");
       }
       // Trim leading/trailing white space, and split words according to spaces
-      List<String> split = Arrays.stream(raw.trim().split("\\ "))
-          .map(x -> x.trim()).collect(Collectors.toList());
-      String cmd = split.remove(0);  // First word is the command keyword
-      String[] rawArgs = split.toArray(new String[split.size()]);
+      controller.getModel().splitInput(raw);
+      String cmd = controller.getModel().getCmd();
+      String[] rawArgs = controller.getModel().getRawArgs();
+//      List<String> split = Arrays.stream(raw.trim().split("\\ "))
+//          .map(x -> x.trim()).collect(Collectors.toList());
+//      String cmd = split.remove(0);  // First word is the command keyword
+//      String[] rawArgs = split.toArray(new String[split.size()]);
       // Remainder, if any, are arguments
 
       // Process user input
@@ -115,6 +121,7 @@ public class SeeterView extends AbstractView{
           controller.getModel().setDraftTopic(rawArgs[0]);
         } else if ("fetch".startsWith(cmd)) {
           // Fetch seets from server
+          
           helper.chan.send(new SeetsReq(rawArgs[0]));
           SeetsReply rep = (SeetsReply) helper.chan.receive();
           System.out.print(
@@ -155,7 +162,11 @@ public class SeeterView extends AbstractView{
     public void update() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+//    
+//    @Override
+//    public void init(){
+//        view.setController();
+//    }
     
     
 
