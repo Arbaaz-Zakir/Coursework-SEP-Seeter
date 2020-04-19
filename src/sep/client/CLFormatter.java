@@ -15,7 +15,7 @@ public class CLFormatter {
 
   static ClientChannel chan;  // Client-side channel for talking to a Seeter server
 
-  CLFormatter(String host, int port) {
+  public CLFormatter(String host, int port) {
     this.chan = new ClientChannel(host, port);
   }
 

@@ -1,9 +1,12 @@
 package sep.client;
 
 
-import sep.seeter.net.channel.ClientChannel;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+//import sep.seeter.net.channel.ClientChannel;
 import sep.seeter.net.message.Message;
-import sep.client.CLFormatter;
+//import sep.client.CLFormatter;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -20,8 +23,12 @@ public class Send implements Command {
         this.message = message;
     }
     @Override
-    public void execute() {
-        //send(message);
+    public void execute(){
+        try {
+            CLFormatter.chan.send(message);
+        } catch (IOException ex) {
+            Logger.getLogger(Send.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }
