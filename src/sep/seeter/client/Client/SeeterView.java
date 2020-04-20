@@ -21,7 +21,7 @@ import sep.seeter.net.message.Publish;
 import sep.seeter.net.message.SeetsReply;
 import sep.seeter.net.message.SeetsReq;
 /**
- *
+ * the view handles the UI aspects of the seeter system
  * @author Arbaaz Zakir
  */
 public class SeeterView extends AbstractView{
@@ -39,7 +39,11 @@ public class SeeterView extends AbstractView{
  
     //private String cmd;
     //private Command command;
-    //private String[] rawArgs;    
+    //private String[] rawArgs;
+    /**
+     * creates a new instance of a view
+     * @param model 
+     */
     public SeeterView(SeeterModel model){
         this.model = model;
         strings = ResourceBundle.getBundle(RESOURCE_PATH, new Locale("en", "GB"));
@@ -52,16 +56,21 @@ public class SeeterView extends AbstractView{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     * runs the view
+     * @throws IOException 
+     */
     @Override
     @SuppressFBWarnings(
       value = "DM_DEFAULT_ENCODING",
       justification = "When reading console, ignore default encoding warning")
     public void run() throws IOException {
-        
         update();
-        
     }
-    
+    /**
+     * assigns the view the controller
+     * @param controller 
+     */
     public void setController(SeeterController controller){
         this.controller = controller;
     }
@@ -72,6 +81,12 @@ public class SeeterView extends AbstractView{
 //      cmd = split.remove(0);  // First word is the command keyword
 //      rawArgs = split.toArray(new String[split.size()]);
 //    }
+    /**
+     * reads user input by splitting the received input into the command
+     * and arguments
+     * @param reader -  takes user input stream
+     * @throws IOException 
+     */
     public void readUserInput(BufferedReader reader) throws IOException{
         //reader = new BufferedReader(new InputStreamReader(System.in));
        String raw = reader.readLine();
@@ -88,6 +103,10 @@ public class SeeterView extends AbstractView{
       
     }
     //////////////////////////////////////////////////////////////////////
+    /**
+     * checks the system has been given a user and host then prints the welcome 
+     * page
+     */
     public void checkClient(){
         if (model.getClient().getUser().isEmpty() || model.getClient().getHost().isEmpty()) {
             System.err.println("User/host has not been set.");
@@ -97,13 +116,17 @@ public class SeeterView extends AbstractView{
             splashScreen();
         }
     }
+    /**
+     * prints welcome 'splash' screen
+     */
     public void splashScreen(){
         if(model.isPrintSplash() == true){
             System.out.println(model.getCLFormatter().formatSplash(model.getClient().getUser()));
         }
-
     }
-    
+    /**
+     * prints the users options depending on the state
+     */
     public void printOptions(){
         if(model.getState() == State.MAIN){
             System.out.print(model.getCLFormatter().formatMainMenuPrompt());
@@ -113,11 +136,20 @@ public class SeeterView extends AbstractView{
             formatDraftingMenuPrompt(model.getDraftTopic(), model.getDraftLines()));
         }
     }  
+    /**
+     * executes a command that has been encapsulated
+     * based on the user input stored in model
+     */
     public void runCommand(){
         Command command = new CommandWords(model).getCommand(model.getCmd());
         command.execute();
     }
-
+    /**
+     * loops the view
+     * @param helper CLFormatter
+     * @param reader BuffereReader
+     * @throws IOException 
+     */
     public void loop(CLFormatter helper, BufferedReader reader) throws IOException{
         for(boolean done = false; !done;){
             printOptions();
@@ -126,12 +158,23 @@ public class SeeterView extends AbstractView{
         }
         
     }
+    /**
+     * gets the helper
+     * @return CLFormatter helper
+     */
     public CLFormatter getCLFormatter(){
         return helper;
     }
+    /**
+     * gets the reader
+     * @return BufferedReafer reader
+     */
      public BufferedReader getReader(){
         return reader;
     }   
+    /**
+     * updates the view depending on the state
+     */
     @Override
     public void update() {
         printOptions();

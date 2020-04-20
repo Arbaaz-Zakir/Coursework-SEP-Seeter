@@ -8,16 +8,23 @@ package sep.seeter.client.Client;
 import sep.seeter.net.message.Publish;
 
 /**
- *
+ * implements command to send seets
  * @author Arbaaz Zakir
  */
 public class SendCommand implements Command{
     private SeeterModel model;
     private CLFormatter helper;
+    /**
+     * creates a new instance of the send command
+     * @param model SeeterModel model
+     */
     public SendCommand(SeeterModel model){
         this.model = model;
         helper = new CLFormatter(model.getClient().getHost(), model.getClient().getPort());
     }
+    /**
+     * executes the command send a composed seet with a body to the server
+     */
     @Override
     public void execute() {
         try{

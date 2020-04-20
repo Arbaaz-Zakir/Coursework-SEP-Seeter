@@ -9,16 +9,23 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 
 /**
- *
+ * implements the command interface, adds text to a draft topic 
  * @author Arbaaz Zakir
  */
 public class BodyCommand implements Command{
     
     private SeeterModel model;
-
+    /**
+     * create new instance of body command that adds to an array in model
+     * @param model - takes model
+     */
     public BodyCommand(SeeterModel model){
         this.model = model;
     }
+    
+    /**
+     * executes the body command causing text to be added to the array
+     */
     @Override
     public void execute() {
         String Line = Arrays.stream(model.getRawArgs()).

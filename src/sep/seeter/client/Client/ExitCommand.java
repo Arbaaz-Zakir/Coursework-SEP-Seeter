@@ -6,14 +6,21 @@
 package sep.seeter.client.Client;
 
 /**
- *
+ * shuts down the system
  * @author Arbaaz Zakir
  */
 public class ExitCommand implements Command{
     private SeeterModel model;
+    /**
+     * create new instance of exit command
+     * @param model 
+     */
     public ExitCommand(SeeterModel model){
         this.model = model;
     }
+    /**
+     * executes system exit
+     */
     @Override
     public void execute() {
         System.exit(0);

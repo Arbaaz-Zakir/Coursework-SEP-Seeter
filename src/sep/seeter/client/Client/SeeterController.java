@@ -11,7 +11,7 @@ import java.io.InputStreamReader;
 import sep.mvc.AbstractController;
 
 /**
- *
+ * the controller part of the mvc architecture connects the model and view
  * @author Arbaaz Zakir
  */
 public class SeeterController{
@@ -21,36 +21,43 @@ public class SeeterController{
 //     String name;
 //     String host;
 //     int port;
-    
+    /**
+     * creating a new instance of a controller and assigning it a new controller
+     * and model
+     * @param model - model linked to the controller
+     * @param view - view linked to the controller
+     */
     public SeeterController(SeeterModel model, SeeterView view){
         this.model = model;
         this.view = view;
         
         view.setController(this);
     }
-    public void setAll(){
-        
-    }
-//    public void setDetails(String name, String host, int port){
-//        this.name = model.getUser();
-//        this.host = model.getHost();
-//        this.port = model.getPort();
-//        this.model.set(name, host, port);
-//    }
+
     
-  
+    /**
+     * retrieves model connected to this controller
+     * @return return model
+     */
     public SeeterModel getModel(){
         return model;
     }
-  
+    /**
+     * retrieves view connected to this controller  
+     * @return return view
+     */
     public SeeterView getView(){
         return view;
     }
     
-  
+    
     public void shutdown(){
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    /**
+     * run the program in a loop
+     * @throws IOException 
+     */
     public void runProgram() throws IOException{
         boolean done = false;
         model.setReader(new BufferedReader(new InputStreamReader(System.in)));

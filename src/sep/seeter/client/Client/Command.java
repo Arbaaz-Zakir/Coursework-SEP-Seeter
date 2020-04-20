@@ -6,9 +6,13 @@
 package sep.seeter.client.Client;
 
 /**
- *
+ * command interface that all other commands implement 
  * @author Arbaaz Zakir
  */
 public interface Command {
+    /**
+     * all classes that implement execute execute individual commands
+     * allowing for encapsulation
+     */
     public void execute();
 }

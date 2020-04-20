@@ -6,7 +6,7 @@
 package sep.seeter.client.Client;
 
 /**
- *
+ * states of the system as enums
  * @author Arbaaz Zakir
  */
 public enum State {
@@ -14,12 +14,18 @@ public enum State {
 
     
     private String state;
-    
+    /**
+     * creates a new state variable to store one of the enums
+     * @param st 
+     */
     private State(String st){
         state = st;
         
     }
-    
+    /**
+     * returns state as a string
+     * @return String state
+     */
     public String toString() {
         return state;
     }    

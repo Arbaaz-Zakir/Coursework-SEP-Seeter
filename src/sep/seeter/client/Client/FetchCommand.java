@@ -12,19 +12,25 @@ import sep.seeter.net.message.SeetsReply;
 import sep.seeter.net.message.SeetsReq;
 
 /**
- *
+ * fetch command retrieves data about a particular topic from the server
  * @author Arbaaz Zakir
  */
 public class FetchCommand implements Command{
     //private CLFormatter helper;
     private SeeterModel model;
-    
+    /**
+     * creates a new instance of a fetch command
+     * @param model model passed to gets and sets data
+     */
     public FetchCommand(SeeterModel model){
         this.model = model;
         
         
     }
-    
+    /**
+     * executes fetch command retrieving data about a particular seet or 
+     * topic data such as userid and body
+     */
     @Override
     public void execute() {
         try{

@@ -81,7 +81,6 @@ public class Client {
     int port = Integer.parseInt(args[2]);
     Client client = new Client();
     client.set(user, host, port);
-//    client.run();
 
     SeeterModel model = new SeeterModel(client);
     SeeterView view = new SeeterView(model);
@@ -89,19 +88,36 @@ public class Client {
     controller.runProgram();
 
   }
-
+  /**
+   * sets the user, host, port
+   * @param user - takes users id
+   * @param host - takes the host (localhost)
+   * @param port - takes the port (8888)
+   */
   public void set(String user, String host, int port) {
     this.user = user;
     this.host = host;
     this.port = port;
   }
   
+  /**
+   * retrieves user id set in client
+   * @return return user as a string
+   */
   public String getUser(){
     return user;
   }
+  /**
+   * retrieves host set in client
+   * @return return the host as a string
+   */
   public String getHost(){
     return host;
   }
+  /**
+   * retrieves the port
+   * @return return port as a integer
+   */
   public int getPort(){
     return port;
   }
