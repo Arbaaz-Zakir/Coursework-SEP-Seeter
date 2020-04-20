@@ -4,6 +4,8 @@ package sep.seeter.client.Client;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 import sep.seeter.net.channel.ClientChannel;
 import sep.seeter.net.message.Message;
 
@@ -12,11 +14,13 @@ import sep.seeter.net.message.Message;
  * for formatting Command Line messages.
  */
 public class CLFormatter {
-
+    private static final String RESOURCE_PATH ="resources/MessageBundle";
+    private final ResourceBundle strings;
   static ClientChannel chan;  // Client-side channel for talking to a Seeter server
 
   CLFormatter(String host, int port) {
     this.chan = new ClientChannel(host, port);
+    strings = ResourceBundle.getBundle(RESOURCE_PATH, new Locale("en", "GB"));
   }
 
   /* Interact with Seeter server */

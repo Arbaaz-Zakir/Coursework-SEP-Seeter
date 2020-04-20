@@ -6,22 +6,28 @@
 package sep.seeter.client.Client;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
-
+import java.util.ResourceBundle;
 /**
- *
+ * 
  * @author Arbaaz Zakir
  */
 public class CommandWords {
     private Map<String, Command> commands = new HashMap<>(); 
+    private static final String RESOURCE_PATH ="resources/MessageBundle";
+    private final ResourceBundle strings;
+   
     //dangerous comeback to this
     private SeeterModel model;
+
     public CommandWords(SeeterModel m){
-        commands.put("exit", new ExitCommand(m));
-        commands.put("fetch", new FetchCommand(m));
-        commands.put("body", new BodyCommand(m));
-        commands.put("send", new SendCommand(m));
-        commands.put("compose", new ComposeCommand(m));
+        strings = ResourceBundle.getBundle(RESOURCE_PATH, new Locale("en", "GB"));
+        commands.put(strings.getString("exit_cmd"), new ExitCommand(m));
+        commands.put(strings.getString("fetch_cmd"), new FetchCommand(m));
+        commands.put(strings.getString("body_cmd"), new BodyCommand(m));
+        commands.put(strings.getString("send_cmd"), new SendCommand(m));
+        commands.put(strings.getString("compose_cmd"), new ComposeCommand(m));
     }
     
     public Command getCommand (String cmd){
