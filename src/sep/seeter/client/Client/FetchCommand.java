@@ -16,32 +16,26 @@ import sep.seeter.net.message.SeetsReq;
  * @author Arbaaz Zakir
  */
 public class FetchCommand implements Command{
-    private CLFormatter helper;
+    //private CLFormatter helper;
     private SeeterModel model;
     
     public FetchCommand(SeeterModel model){
         this.model = model;
-        helper = new CLFormatter(model.getHost(), model.getPort());
+        
         
     }
     
     @Override
     public void execute() {
         try{
-          helper.chan.send(new SeetsReq(model.getRawArgs()[0]));
-          SeetsReply rep = (SeetsReply) helper.chan.receive();
+          model.getCLFormatter().chan.send(new SeetsReq(model.getRawArgs()[0]));
+          SeetsReply rep = (SeetsReply) model.getCLFormatter().chan.receive();
           System.out.print(
-              helper.formatFetched(model.getRawArgs()[0], rep.users, rep.lines));
+              model.getCLFormatter().formatFetched(model.getRawArgs()[0], rep.users, rep.lines));
         }
         catch(Exception ex){
             throw new RuntimeException();
         }
-     }
-    public void setModel(SeeterModel model){
-        this.model = model;
-    }
-    
-    
-    
+     } 
     
 }

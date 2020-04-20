@@ -12,7 +12,7 @@ package sep.seeter.client.Client;
 public class ComposeCommand implements Command{
     private SeeterModel model;
     
-    public ComposeCommand(String draftTopic){
+    public ComposeCommand(SeeterModel model){
         this.model = model;
     }
     @Override

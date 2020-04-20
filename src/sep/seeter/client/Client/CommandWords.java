@@ -17,9 +17,11 @@ public class CommandWords {
     //dangerous comeback to this
     private SeeterModel model;
     public CommandWords(SeeterModel m){
-        commands.put("exit", new ExitCommand());
-        commands.put("fetch", new FetchCommand(this.model = m));
-        commands.put("body", new BodyCommand(this.model = m));
+        commands.put("exit", new ExitCommand(m));
+        commands.put("fetch", new FetchCommand(m));
+        commands.put("body", new BodyCommand(m));
+        commands.put("send", new SendCommand(m));
+        commands.put("compose", new ComposeCommand(m));
     }
     
     public Command getCommand (String cmd){

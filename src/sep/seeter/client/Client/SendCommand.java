@@ -16,13 +16,14 @@ public class SendCommand implements Command{
     private CLFormatter helper;
     public SendCommand(SeeterModel model){
         this.model = model;
-        helper = new CLFormatter(model.getHost(), model.getPort());
+        helper = new CLFormatter(model.getClient().getHost(), model.getClient().getPort());
     }
     @Override
     public void execute() {
         try{
-            helper.chan.send(new Publish(model.getUser(), model.getDraftTopic(), model.getDraftLines()));
+           helper.chan.send(new Publish(model.getClient().getUser(), model.getDraftTopic(), model.getDraftLines()));
             model.setDraftTopic(null);
+            model.setStateMain();
         }  
         catch (Exception ex){
             throw new RuntimeException();

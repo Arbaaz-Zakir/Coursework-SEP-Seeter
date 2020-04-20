@@ -10,7 +10,10 @@ package sep.seeter.client.Client;
  * @author Arbaaz Zakir
  */
 public class ExitCommand implements Command{
-
+    private SeeterModel model;
+    public ExitCommand(SeeterModel model){
+        this.model = model;
+    }
     @Override
     public void execute() {
         System.exit(0);

@@ -80,18 +80,20 @@ public class Client {
     String user = args[0];
     String host = args[1];
     int port = Integer.parseInt(args[2]);
-//    Client client = new Client();
-//    client.set(user, host, port);
+    Client client = new Client();
+    client.set(user, host, port);
 //    client.run();
 
-    SeeterModel model = new SeeterModel();
-    SeeterView view = new SeeterView();
+    SeeterModel model = new SeeterModel(client);
+    SeeterView view = new SeeterView(model);
     //model.set(user, host, port);
     SeeterController controller = new SeeterController(model, view);
-    controller.getModel().set(user, host, port);
-  //  controllerview.init();
-    controller.getView().run();
-    
+    //controller.getModel();
+//    controller.getModel().set(user, host, port);
+    //controller.getView().init();
+    controller.runProgram();
+    //System.out.println(controller.getModel().getUser());
+    //view.run();
   }
 
   public void set(String user, String host, int port) {

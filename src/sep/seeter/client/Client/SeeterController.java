@@ -5,23 +5,28 @@
  */
 package sep.seeter.client.Client;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import sep.mvc.AbstractController;
 
 /**
  *
  * @author Arbaaz Zakir
  */
-public class SeeterController extends AbstractController{
+public class SeeterController{
     private SeeterModel model;
     private SeeterView view;
+    private SeeterController controller;
 //     String name;
 //     String host;
 //     int port;
     
     public SeeterController(SeeterModel model, SeeterView view){
-        super(model, view);
+        this.model = model;
+        this.view = view;
         
-        //view.setController(this);
+        view.setController(this);
     }
     public void setAll(){
         
@@ -33,18 +38,31 @@ public class SeeterController extends AbstractController{
 //        this.model.set(name, host, port);
 //    }
     
-    @Override
+  
     public SeeterModel getModel(){
         return model;
     }
-    @Override
+  
     public SeeterView getView(){
         return view;
     }
     
-    @Override
-    public void shutdown() {
+  
+    public void shutdown(){
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    public void runProgram() throws IOException{
+        boolean done = false;
+        model.setReader(new BufferedReader(new InputStreamReader(System.in)));
+        //view.getSplash();
+        view.splashScreen();
+        while(done == false){
+            view.run();
+            view.loop(model.getCLFormatter(), model.getReader());
+           // BufferedReader reader;
+           // reader = new BufferedReader(new InputStreamReader(System.in));
+          //  view.readUserInput(new BufferedReader(new InputStreamReader(System.in)));
+        }
     }
       
 }
