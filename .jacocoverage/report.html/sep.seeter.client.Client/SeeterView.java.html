@@ -74,13 +74,7 @@ public class SeeterView extends AbstractView{
     public void setController(SeeterController controller){
 <span class="fc" id="L75">        this.controller = controller;</span>
 <span class="fc" id="L76">    }</span>
-    /////////////////////////
-//    public void splitInput(String raw){
-//      List&lt;String&gt; split = Arrays.stream(raw.trim().split(&quot;\\ &quot;))
-//          .map(x -&gt; x.trim()).collect(Collectors.toList());
-//      cmd = split.remove(0);  // First word is the command keyword
-//      rawArgs = split.toArray(new String[split.size()]);
-//    }
+
     /**
      * reads user input by splitting the received input into the command
      * and arguments
@@ -89,61 +83,61 @@ public class SeeterView extends AbstractView{
      */
     public void readUserInput(BufferedReader reader) throws IOException{
         //reader = new BufferedReader(new InputStreamReader(System.in));
-<span class="fc" id="L92">       String raw = reader.readLine();</span>
+<span class="fc" id="L86">       String raw = reader.readLine();</span>
        // splitInput(raw);
-<span class="pc bpc" id="L94" title="1 of 2 branches missed.">       if(raw == null){</span>
-<span class="nc" id="L95">           throw new IOException(&quot;input stream closed while reading&quot;);</span>
+<span class="pc bpc" id="L88" title="1 of 2 branches missed.">       if(raw == null){</span>
+<span class="nc" id="L89">           throw new IOException(strings.getString(&quot;stream_closed&quot;));</span>
        }
-<span class="fc" id="L97">      List&lt;String&gt; split = Arrays.stream(raw.trim().split(&quot;\\ &quot;))</span>
-<span class="fc" id="L98">          .map(x -&gt; x.trim()).collect(Collectors.toList());</span>
-<span class="fc" id="L99">      String cmd = split.remove(0);  // First word is the command keyword</span>
-<span class="fc" id="L100">      model.setCmd(cmd);</span>
-<span class="fc" id="L101">      String[] rawArgs = split.toArray(new String[split.size()]);</span>
-<span class="fc" id="L102">      model.setRawArgs(rawArgs);</span>
+<span class="fc" id="L91">      List&lt;String&gt; split = Arrays.stream(raw.trim().split(&quot;\\ &quot;))</span>
+<span class="fc" id="L92">          .map(x -&gt; x.trim()).collect(Collectors.toList());</span>
+<span class="fc" id="L93">      String cmd = split.remove(0);  // First word is the command keyword</span>
+<span class="fc" id="L94">      model.setCmd(cmd);</span>
+<span class="fc" id="L95">      String[] rawArgs = split.toArray(new String[split.size()]);</span>
+<span class="fc" id="L96">      model.setRawArgs(rawArgs);</span>
       
-<span class="fc" id="L104">    }</span>
+<span class="fc" id="L98">    }</span>
     //////////////////////////////////////////////////////////////////////
     /**
      * checks the system has been given a user and host then prints the welcome 
      * page
      */
     public void checkClient(){
-<span class="nc bnc" id="L111" title="All 4 branches missed.">        if (model.getClient().getUser().isEmpty() || model.getClient().getHost().isEmpty()) {</span>
-<span class="nc" id="L112">            System.err.println(&quot;Not supported yet.&quot;);</span>
-<span class="nc" id="L113">            System.exit(1);</span>
+<span class="nc bnc" id="L105" title="All 4 branches missed.">        if (model.getClient().getUser().isEmpty() || model.getClient().getHost().isEmpty()) {</span>
+<span class="nc" id="L106">            System.err.println(strings.getString(&quot;Unsupported_Operation&quot;));</span>
+<span class="nc" id="L107">            System.exit(1);</span>
         }
         else{
-<span class="nc" id="L116">            splashScreen();</span>
+<span class="nc" id="L110">            splashScreen();</span>
         }
-<span class="nc" id="L118">    }</span>
+<span class="nc" id="L112">    }</span>
     /**
      * prints welcome 'splash' screen
      */
     public void splashScreen(){
-<span class="pc bpc" id="L123" title="1 of 2 branches missed.">        if(model.isPrintSplash() == true){</span>
-<span class="fc" id="L124">            System.out.println(model.getCLFormatter().formatSplash(model.getClient().getUser()));</span>
+<span class="pc bpc" id="L117" title="1 of 2 branches missed.">        if(model.isPrintSplash() == true){</span>
+<span class="fc" id="L118">            System.out.println(model.getCLFormatter().formatSplash(model.getClient().getUser()));</span>
         }
-<span class="fc" id="L126">    }</span>
+<span class="fc" id="L120">    }</span>
     /**
      * prints the users options depending on the state
      */
     public void printOptions(){
-<span class="fc bfc" id="L131" title="All 2 branches covered.">        if(model.getState() == State.MAIN){</span>
-<span class="fc" id="L132">            System.out.print(model.getCLFormatter().formatMainMenuPrompt());</span>
+<span class="fc bfc" id="L125" title="All 2 branches covered.">        if(model.getState() == State.MAIN){</span>
+<span class="fc" id="L126">            System.out.print(model.getCLFormatter().formatMainMenuPrompt());</span>
           } 
         else {  // state = &quot;Drafting&quot;
-<span class="fc" id="L135">        System.out.print(model.getCLFormatter().</span>
-<span class="fc" id="L136">            formatDraftingMenuPrompt(model.getDraftTopic(), model.getDraftLines()));</span>
+<span class="fc" id="L129">        System.out.print(model.getCLFormatter().</span>
+<span class="fc" id="L130">            formatDraftingMenuPrompt(model.getDraftTopic(), model.getDraftLines()));</span>
         }
-<span class="fc" id="L138">    }  </span>
+<span class="fc" id="L132">    }  </span>
     /**
      * executes a command that has been encapsulated
      * based on the user input stored in model
      */
     public void runCommand(){
-<span class="fc" id="L144">        Command command = new CommandWords(model).getCommand(model.getCmd());</span>
-<span class="fc" id="L145">        command.execute();</span>
-<span class="fc" id="L146">    }</span>
+<span class="fc" id="L138">        Command command = new CommandWords(model).getCommand(model.getCmd());</span>
+<span class="fc" id="L139">        command.execute();</span>
+<span class="fc" id="L140">    }</span>
     /**
      * loops the view
      * @param helper CLFormatter
@@ -151,34 +145,34 @@ public class SeeterView extends AbstractView{
      * @throws IOException 
      */
     public void loop(CLFormatter helper, BufferedReader reader) throws IOException{
-<span class="pc bpc" id="L154" title="1 of 2 branches missed.">        for(boolean done = false; !done;){</span>
-<span class="fc" id="L155">            printOptions();</span>
-<span class="fc" id="L156">            readUserInput(reader);</span>
-<span class="fc" id="L157">            runCommand();</span>
+<span class="pc bpc" id="L148" title="1 of 2 branches missed.">        for(boolean done = false; !done;){</span>
+<span class="fc" id="L149">            printOptions();</span>
+<span class="fc" id="L150">            readUserInput(reader);</span>
+<span class="fc" id="L151">            runCommand();</span>
         }
         
-<span class="nc" id="L160">    }</span>
+<span class="nc" id="L154">    }</span>
     /**
      * gets the helper
      * @return CLFormatter helper
      */
     public CLFormatter getCLFormatter(){
-<span class="nc" id="L166">        return helper;</span>
+<span class="nc" id="L160">        return helper;</span>
     }
     /**
      * gets the reader
      * @return BufferedReafer reader
      */
      public BufferedReader getReader(){
-<span class="nc" id="L173">        return reader;</span>
+<span class="nc" id="L167">        return reader;</span>
     }   
     /**
      * updates the view depending on the state
      */
     @Override
     public void update() {
-<span class="fc" id="L180">        printOptions();</span>
-<span class="fc" id="L181">    }</span>
+<span class="fc" id="L174">        printOptions();</span>
+<span class="fc" id="L175">    }</span>
     
 //    public void splash(){
 //        if(m.printSplash = true){

@@ -29,15 +29,17 @@ public class FetchCommand implements Command{
     }
     /**
      * executes fetch command retrieving data about a particular seet or 
-     * topic data such as userid and body
+     * topic data such as userid and body and having chance to adde to to it
      */
     @Override
     public void execute() {
         try{
           model.getCLFormatter().chan.send(new SeetsReq(model.getRawArgs()[0]));
+          model.setStateDrafting();
           SeetsReply rep = (SeetsReply) model.getCLFormatter().chan.receive();
           System.out.print(
               model.getCLFormatter().formatFetched(model.getRawArgs()[0], rep.users, rep.lines));
+          model.setDraftTopic(model.getRawArgs()[0]);
         }
         catch(Exception ex){
             throw new RuntimeException();

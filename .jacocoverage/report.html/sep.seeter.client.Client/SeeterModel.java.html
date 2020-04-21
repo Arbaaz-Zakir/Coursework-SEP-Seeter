@@ -137,36 +137,37 @@ public class SeeterModel{
      * @return String array of input arguments
      */
     public String[] getRawArgs(){
-<span class="fc" id="L140">        return rawArgs;</span>
+<span class="fc" id="L140">        String[] middle = rawArgs;</span>
+<span class="fc" id="L141">        return middle;</span>
     }
     /**
      * sets the arguments in rawArgs
      * @param rawArgs String array of raw arguments
      */
     public void setRawArgs(String[] rawArgs){
-<span class="fc" id="L147">        this.rawArgs = rawArgs;</span>
-<span class="fc" id="L148">    }  </span>
+<span class="fc" id="L148">        this.rawArgs = Arrays.copyOf(rawArgs, rawArgs.length);</span>
+<span class="fc" id="L149">    }  </span>
     /**
      * sets the command inputted
      * @param cmd String command
      */
     public void setCmd(String cmd){
-<span class="fc" id="L154">        this.cmd = cmd;</span>
-<span class="fc" id="L155">    }</span>
+<span class="fc" id="L155">        this.cmd = cmd;</span>
+<span class="fc" id="L156">    }</span>
     /**
      * returns the splash boolean
      * @return true
      */
     public boolean isPrintSplash() {
-<span class="fc" id="L161">        return printSplash;</span>
+<span class="fc" id="L162">        return printSplash;</span>
     }
     /**
      * sets the print splash
      * @param printSplash start menu with name etc.
      */
-    public void setPrintSplash(boolean printSplash) {
-<span class="nc" id="L168">        this.printSplash = printSplash;</span>
-<span class="nc" id="L169">    }</span>
+//    public void setPrintSplash(boolean printSplash) {
+//        this.printSplash = printSplash;
+//    }
     
     
     
