@@ -162,6 +162,12 @@ public class SeeterModel{
         return printSplash;
     }
     /**
+     * empties list of draftLines
+     */
+    public void clearDraftLines(){
+        draftLines.clear();
+    }
+    /**
      * sets the print splash
      * @param printSplash start menu with name etc.
      */

@@ -30,13 +30,14 @@ public class SendCommand implements Command{
         try{
 <span class="fc" id="L31">           helper.chan.send(new Publish(model.getClient().getUser(), model.getDraftTopic(), model.getDraftLines()));</span>
 <span class="fc" id="L32">            model.setDraftTopic(null);</span>
-<span class="fc" id="L33">            model.setStateMain();</span>
+<span class="fc" id="L33">            model.clearDraftLines();</span>
+<span class="fc" id="L34">            model.setStateMain();</span>
         }  
-<span class="nc" id="L35">        catch (Exception ex){</span>
-<span class="nc" id="L36">            throw new RuntimeException();</span>
-<span class="fc" id="L37">        }</span>
+<span class="nc" id="L36">        catch (Exception ex){</span>
+<span class="nc" id="L37">            throw new RuntimeException();</span>
+<span class="fc" id="L38">        }</span>
         
-<span class="fc" id="L39">    }</span>
+<span class="fc" id="L40">    }</span>
     
 }
 

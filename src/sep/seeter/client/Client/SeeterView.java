@@ -135,8 +135,12 @@ public class SeeterView extends AbstractView{
      * based on the user input stored in model
      */
     public void runCommand(){
-        Command command = new CommandWords(model).getCommand(model.getCmd());
-        command.execute();
+//        if(model.getCmd().equals("undo")){
+//            BodyCommand command = new BodyCommand(model);
+//            command.undo();
+//        }
+            Command command = new CommandWords(model).getCommand(model.getCmd());
+            command.execute();
     }
     /**
      * loops the view

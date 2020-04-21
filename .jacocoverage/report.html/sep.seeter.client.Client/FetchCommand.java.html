@@ -29,17 +29,17 @@ public class FetchCommand implements Command{
 <span class="fc" id="L29">    }</span>
     /**
      * executes fetch command retrieving data about a particular seet or 
-     * topic data such as userid and body and having chance to adde to to it
+     * topic data such as userid and body
      */
     @Override
     public void execute() {
         try{
-<span class="fc" id="L37">          model.getCLFormatter().chan.send(new SeetsReq(model.getRawArgs()[0]));</span>
-<span class="fc" id="L38">          model.setStateDrafting();</span>
-<span class="fc" id="L39">          SeetsReply rep = (SeetsReply) model.getCLFormatter().chan.receive();</span>
-<span class="fc" id="L40">          System.out.print(</span>
-<span class="fc" id="L41">              model.getCLFormatter().formatFetched(model.getRawArgs()[0], rep.users, rep.lines));</span>
-<span class="fc" id="L42">          model.setDraftTopic(model.getRawArgs()[0]);</span>
+<span class="fc" id="L37">          model.setStateMain();</span>
+<span class="fc" id="L38">          model.getCLFormatter().chan.send(new SeetsReq(model.getRawArgs()[0]));</span>
+          //model.setStateMain();
+<span class="fc" id="L40">          SeetsReply rep = (SeetsReply) model.getCLFormatter().chan.receive();</span>
+<span class="fc" id="L41">          System.out.print(</span>
+<span class="fc" id="L42">              model.getCLFormatter().formatFetched(model.getRawArgs()[0], rep.users, rep.lines));</span>
         }
 <span class="nc" id="L44">        catch(Exception ex){</span>
 <span class="nc" id="L45">            throw new RuntimeException();</span>

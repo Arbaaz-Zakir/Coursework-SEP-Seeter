@@ -19,7 +19,7 @@ public class CommandWords {
     private static final String RESOURCE_PATH ="resources/MessageBundle";
     private final ResourceBundle strings;
    
-    //dangerous comeback to this
+ 
     private SeeterModel model;
     /**
      * creates a new instance of a command whenever called

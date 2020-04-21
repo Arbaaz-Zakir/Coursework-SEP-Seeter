@@ -135,9 +135,13 @@ public class SeeterView extends AbstractView{
      * based on the user input stored in model
      */
     public void runCommand(){
-<span class="fc" id="L138">        Command command = new CommandWords(model).getCommand(model.getCmd());</span>
-<span class="fc" id="L139">        command.execute();</span>
-<span class="fc" id="L140">    }</span>
+//        if(model.getCmd().equals(&quot;undo&quot;)){
+//            BodyCommand command = new BodyCommand(model);
+//            command.undo();
+//        }
+<span class="fc" id="L142">            Command command = new CommandWords(model).getCommand(model.getCmd());</span>
+<span class="fc" id="L143">            command.execute();</span>
+<span class="fc" id="L144">    }</span>
     /**
      * loops the view
      * @param helper CLFormatter
@@ -145,34 +149,34 @@ public class SeeterView extends AbstractView{
      * @throws IOException 
      */
     public void loop(CLFormatter helper, BufferedReader reader) throws IOException{
-<span class="pc bpc" id="L148" title="1 of 2 branches missed.">        for(boolean done = false; !done;){</span>
-<span class="fc" id="L149">            printOptions();</span>
-<span class="fc" id="L150">            readUserInput(reader);</span>
-<span class="fc" id="L151">            runCommand();</span>
+<span class="pc bpc" id="L152" title="1 of 2 branches missed.">        for(boolean done = false; !done;){</span>
+<span class="fc" id="L153">            printOptions();</span>
+<span class="fc" id="L154">            readUserInput(reader);</span>
+<span class="fc" id="L155">            runCommand();</span>
         }
         
-<span class="nc" id="L154">    }</span>
+<span class="nc" id="L158">    }</span>
     /**
      * gets the helper
      * @return CLFormatter helper
      */
     public CLFormatter getCLFormatter(){
-<span class="nc" id="L160">        return helper;</span>
+<span class="nc" id="L164">        return helper;</span>
     }
     /**
      * gets the reader
      * @return BufferedReafer reader
      */
      public BufferedReader getReader(){
-<span class="nc" id="L167">        return reader;</span>
+<span class="nc" id="L171">        return reader;</span>
     }   
     /**
      * updates the view depending on the state
      */
     @Override
     public void update() {
-<span class="fc" id="L174">        printOptions();</span>
-<span class="fc" id="L175">    }</span>
+<span class="fc" id="L178">        printOptions();</span>
+<span class="fc" id="L179">    }</span>
     
 //    public void splash(){
 //        if(m.printSplash = true){

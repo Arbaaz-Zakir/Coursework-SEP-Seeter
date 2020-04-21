@@ -28,9 +28,16 @@ public class BodyCommand implements Command{
      */
     @Override
     public void execute() {
+        model.setStateDrafting();
         String Line = Arrays.stream(model.getRawArgs()).
                 collect(Collectors.joining());
         model.addDraftLines(Line);
         
     }
+//    public void undo(){
+//        if(model.getState() == State.DRAFTING){
+//        model.addDraftLines(model.getDraftLines().
+//                remove(model.getDraftLines().size() - 1));
+//        }
+//    }
 }

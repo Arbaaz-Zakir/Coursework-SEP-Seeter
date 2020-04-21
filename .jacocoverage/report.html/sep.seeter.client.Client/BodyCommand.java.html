@@ -28,10 +28,17 @@ public class BodyCommand implements Command{
      */
     @Override
     public void execute() {
-<span class="fc" id="L31">        String Line = Arrays.stream(model.getRawArgs()).</span>
-<span class="fc" id="L32">                collect(Collectors.joining());</span>
-<span class="fc" id="L33">        model.addDraftLines(Line);</span>
+<span class="fc" id="L31">        model.setStateDrafting();</span>
+<span class="fc" id="L32">        String Line = Arrays.stream(model.getRawArgs()).</span>
+<span class="fc" id="L33">                collect(Collectors.joining());</span>
+<span class="fc" id="L34">        model.addDraftLines(Line);</span>
         
-<span class="fc" id="L35">    }</span>
+<span class="fc" id="L36">    }</span>
+//    public void undo(){
+//        if(model.getState() == State.DRAFTING){
+//        model.addDraftLines(model.getDraftLines().
+//                remove(model.getDraftLines().size() - 1));
+//        }
+//    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
