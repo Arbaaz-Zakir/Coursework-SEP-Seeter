@@ -54,7 +54,7 @@ public class CommandWords {
      * lists all commands
      * @return String list of all commands
      */
-    public String ListCommands(){
+    public String listCommands(){
         String cmdList = "";
         for(String s: commands.keySet()){
             cmdList += s + "\n";

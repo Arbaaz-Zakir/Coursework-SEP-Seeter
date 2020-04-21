@@ -60,10 +60,10 @@ public class SeeterController{
      */
     public void runProgram() throws IOException{
         boolean done = false;
-        model.setReader(new BufferedReader(new InputStreamReader(System.in)));
+        model.setReader(new BufferedReader(new InputStreamReader(System.in, "UTF-8")));
         //view.getSplash();
         view.splashScreen();
-        while(done == false){
+        while(model.getState() != State.TERMINATED){
             view.run();
             view.loop(model.getCLFormatter(), model.getReader());
            // BufferedReader reader;

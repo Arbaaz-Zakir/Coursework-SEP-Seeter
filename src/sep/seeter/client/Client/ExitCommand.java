@@ -23,6 +23,7 @@ public class ExitCommand implements Command{
      */
     @Override
     public void execute() {
+        model.setStateTerminated();
         System.exit(0);
     }
     

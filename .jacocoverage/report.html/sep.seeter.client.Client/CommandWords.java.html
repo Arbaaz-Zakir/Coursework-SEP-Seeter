@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>CommandWords.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;seeter&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">sep.seeter.client.Client</a> &gt; <span class="el_source">CommandWords.java</span></div><h1>CommandWords.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package sep.seeter.client.Client;
+
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
+import java.util.ResourceBundle;
+/**
+ * a collection of all commands that are currently usable by a user
+ * 
+ * @author Arbaaz Zakir
+ */
+public class CommandWords {
+<span class="fc" id="L18">    private Map&lt;String, Command&gt; commands = new HashMap&lt;&gt;(); </span>
+    private static final String RESOURCE_PATH =&quot;resources/MessageBundle&quot;;
+    private final ResourceBundle strings;
+   
+    //dangerous comeback to this
+    private SeeterModel model;
+    /**
+     * creates a new instance of a command whenever called
+     * @param m takes in model to allow executes to change the model
+     */
+<span class="fc" id="L28">    public CommandWords(SeeterModel m){</span>
+<span class="fc" id="L29">        strings = ResourceBundle.getBundle(RESOURCE_PATH, new Locale(&quot;en&quot;, &quot;GB&quot;));</span>
+<span class="fc" id="L30">        commands.put(strings.getString(&quot;exit_cmd&quot;), new ExitCommand(m));</span>
+<span class="fc" id="L31">        commands.put(strings.getString(&quot;fetch_cmd&quot;), new FetchCommand(m));</span>
+<span class="fc" id="L32">        commands.put(strings.getString(&quot;body_cmd&quot;), new BodyCommand(m));</span>
+<span class="fc" id="L33">        commands.put(strings.getString(&quot;send_cmd&quot;), new SendCommand(m));</span>
+<span class="fc" id="L34">        commands.put(strings.getString(&quot;compose_cmd&quot;), new ComposeCommand(m));</span>
+<span class="fc" id="L35">    }</span>
+    
+    /**
+     * retrieves a command whose key matches the inputted string
+     * @param cmd user inputted command as a string to then return a command
+     * @return returns a corresponding command whose key matches the inputted string
+     */
+    public Command getCommand (String cmd){
+<span class="fc" id="L43">        return commands.get(cmd);</span>
+    }
+    /**
+     * checks if command is valid
+     * @param cmd cmd is inputted string
+     * @return true if command matches another key of a command
+     */
+    public boolean isValidCmd(String cmd){
+<span class="nc" id="L51">        return commands.containsKey(cmd);</span>
+    }
+    /**
+     * lists all commands
+     * @return String list of all commands
+     */
+    public String listCommands(){
+<span class="nc" id="L58">        String cmdList = &quot;&quot;;</span>
+<span class="nc bnc" id="L59" title="All 2 branches missed.">        for(String s: commands.keySet()){</span>
+<span class="nc" id="L60">            cmdList += s + &quot;\n&quot;;</span>
+<span class="nc" id="L61">        }</span>
+<span class="nc" id="L62">        return cmdList;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

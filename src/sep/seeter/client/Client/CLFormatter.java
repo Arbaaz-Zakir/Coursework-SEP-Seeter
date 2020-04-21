@@ -14,24 +14,23 @@ import sep.seeter.net.message.Message;
  * for formatting Command Line messages.
  */
 public class CLFormatter {
-    private static final String RESOURCE_PATH ="resources/MessageBundle";
-    private final ResourceBundle strings;
+
   static ClientChannel chan;  // Client-side channel for talking to a Seeter server
 
   CLFormatter(String host, int port) {
     this.chan = new ClientChannel(host, port);
-    strings = ResourceBundle.getBundle(RESOURCE_PATH, new Locale("en", "GB"));
+ 
   }
 
   /* Interact with Seeter server */
 
-  private void send(Message msg) throws IOException {
-    this.chan.send(msg);
-  }
+//  private void send(Message msg) throws IOException {
+//    this.chan.send(msg);
+//  }
 
-  private Message receive() throws IOException, ClassNotFoundException {
-    return this.chan.receive();
-  }
+//  private Message receive() throws IOException, ClassNotFoundException {
+//    return this.chan.receive();
+//  }
 
   /* Following are the auxiliary methods for formatting the UI text */
 

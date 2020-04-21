@@ -15,15 +15,12 @@ import sep.mvc.AbstractModel;
  * @author Arbaaz Zakir
  */
 public class SeeterModel{
-    //enum States{MAIN, DRAFTING, TERMINATED}
     private String[] rawArgs;
     private CLFormatter helper;
     private BufferedReader reader;
     private String cmd;
     private Client client;
-//    private String user;
-//    private String host;
-//    private int port;
+
     private State state = State.MAIN;
     //Client client;
     private boolean printSplash = true;
@@ -57,19 +54,7 @@ public class SeeterModel{
     public Client getClient(){
         return client;
     }
-//    
-//    public String getUser(){
-//        return user;
-//    }
-//    
-//    public String getHost(){
-//        return host;
-//    }
-//    
-//    public int getPort(){
-//        return port;
-//    }
-    // states
+
     /**
      * sets state to drafting
      */
@@ -179,9 +164,9 @@ public class SeeterModel{
      * sets the print splash
      * @param printSplash start menu with name etc.
      */
-    public void setPrintSplash(boolean printSplash) {
-        this.printSplash = printSplash;
-    }
+//    public void setPrintSplash(boolean printSplash) {
+//        this.printSplash = printSplash;
+//    }
     
     
     

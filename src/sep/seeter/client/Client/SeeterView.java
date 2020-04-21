@@ -53,7 +53,7 @@ public class SeeterView extends AbstractView{
     
     @Override
     public void close() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException(strings.getString("Unsupported_Operation")); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -74,13 +74,7 @@ public class SeeterView extends AbstractView{
     public void setController(SeeterController controller){
         this.controller = controller;
     }
-    /////////////////////////
-//    public void splitInput(String raw){
-//      List<String> split = Arrays.stream(raw.trim().split("\\ "))
-//          .map(x -> x.trim()).collect(Collectors.toList());
-//      cmd = split.remove(0);  // First word is the command keyword
-//      rawArgs = split.toArray(new String[split.size()]);
-//    }
+
     /**
      * reads user input by splitting the received input into the command
      * and arguments
@@ -109,7 +103,7 @@ public class SeeterView extends AbstractView{
      */
     public void checkClient(){
         if (model.getClient().getUser().isEmpty() || model.getClient().getHost().isEmpty()) {
-            System.err.println("User/host has not been set.");
+            System.err.println(strings.getString("Unsupported_Operation"));
             System.exit(1);
         }
         else{
