@@ -137,14 +137,15 @@ public class SeeterModel{
      * @return String array of input arguments
      */
     public String[] getRawArgs(){
-        return rawArgs;
+        String[] middle = rawArgs;
+        return middle;
     }
     /**
      * sets the arguments in rawArgs
      * @param rawArgs String array of raw arguments
      */
     public void setRawArgs(String[] rawArgs){
-        this.rawArgs = rawArgs;
+        this.rawArgs = Arrays.copyOf(rawArgs, rawArgs.length);
     }  
     /**
      * sets the command inputted
