@@ -1,0 +1,155 @@
+commit b624e94eedd088afe292676a5d9e54dd7d4eb164
+Author: Arbaaz Zakir <z.arbaaz786@gmail.com>
+Date:   Tue Apr 21 22:57:48 2020 +0100
+
+    final before submission ensuring this is the latest version by commiting everything one last time
+
+commit ec1c5c0459636dcd23eadabf46e3319cb0c8c10e
+Author: jstWhy <z.arbaaz786@gmail.com>
+Date:   Tue Apr 21 22:45:09 2020 +0100
+
+    Create README.md
+
+commit 70eb819b7a588a81d6640efffec189dc91c70f19
+Author: Arbaaz Zakir <z.arbaaz786@gmail.com>
+Date:   Tue Apr 21 22:21:11 2020 +0100
+
+    final touches before submission, attempted the undo command however did not work also attempted to prevent some errors that were occuring which were either caused by the changes i made or were just issues i did not notice before
+
+commit aea5b5cf70a0f2a35828e5d28b900396f455d376
+Author: Arbaaz Zakir <z.arbaaz786@gmail.com>
+Date:   Tue Apr 21 15:18:02 2020 +0100
+
+    added code so that when u fetch a topic the state switches too the drafting state and allows users to add to said topic
+
+commit 402a796c8e36b5ee80d147ccb50d97f2ae4449d8
+Author: Arbaaz Zakir <z.arbaaz786@gmail.com>
+Date:   Tue Apr 21 12:36:06 2020 +0100
+
+    resolved some bug identified by find bugs
+
+commit d7afa4130929a014d5440db6d216c1a8cf83a3d3
+Author: Arbaaz Zakir <z.arbaaz786@gmail.com>
+Date:   Tue Apr 21 04:03:38 2020 +0100
+
+    added acceptance tests and carried out jacocoverage
+
+commit adc606f1de14a4c81c65ea59fa0dd9e12976a261
+Author: Arbaaz Zakir <z.arbaaz786@gmail.com>
+Date:   Mon Apr 20 20:31:11 2020 +0100
+
+    added basic comments
+
+commit c387cf799c4680c880e7a6703024b338241e0689
+Author: Arbaaz Zakir <z.arbaaz786@gmail.com>
+Date:   Mon Apr 20 18:40:25 2020 +0100
+
+    fascilaties for internationalisation set up
+
+commit f205413d6992d647c19a934aa6060ecdf6324743
+Author: Arbaaz Zakir <z.arbaaz786@gmail.com>
+Date:   Mon Apr 20 14:02:22 2020 +0100
+
+    adding resources for internationalisation
+
+commit b5c9a89e6236a7d2643eec193c5bf42305036205
+Author: Arbaaz Zakir <z.arbaaz786@gmail.com>
+Date:   Mon Apr 20 13:41:06 2020 +0100
+
+    got working the mvc with command design pattern with mvc actually working however for it to work i had to pass the view the model which i feel some what breaks away from mvc where they see each other. have not yet implemented the additional features
+
+commit 2cb3d9c09ce07ea4c8930170f0c9e722359e69f1
+Author: Arbaaz Zakir <z.arbaaz786@gmail.com>
+Date:   Sun Apr 19 18:06:56 2020 +0100
+
+    believed to have created all the methods that implement command design however i am not 100% as some commands take a model as a paramater which i feel creates coupling so that may be changed later. i also need to implemnt all of these commands which i may do later
+
+commit d15031732b1aab72f5577f2f9e17d980afa0e0e6
+Author: Arbaaz Zakir <z.arbaaz786@gmail.com>
+Date:   Sun Apr 19 16:19:45 2020 +0100
+
+    implemented exit cmd, possibly fetch but not 100%, also refactoring code
+
+commit 45e37d598cf05ab133ea276be475d08afa31ee21
+Author: Arbaaz Zakir <z.arbaaz786@gmail.com>
+Date:   Sun Apr 19 11:09:15 2020 +0100
+
+    had trouble merging previous command-design-pattern automatically so decided to create a new one after mergeing what i currently have for the mvc. currently added interface command
+
+commit c3130f003b84913fa4a544bfb1c3affb1f65efd9
+Author: Arbaaz Zakir <z.arbaaz786@gmail.com>
+Date:   Sun Apr 19 10:28:56 2020 +0100
+
+    have not got mvc working properly, however am running out of time so need to move on to other things therefore will merge this branch and start something else
+
+commit 89363a1fadc0d332104559db122190a629e60ddf
+Author: Arbaaz Zakir <z.arbaaz786@gmail.com>
+Date:   Sat Apr 18 01:16:26 2020 +0100
+
+    minor updates on MVC
+
+commit 6038c4ed559195a684a9bbee0e5a16de1554ef93
+Author: Arbaaz Zakir <z.arbaaz786@gmail.com>
+Date:   Sat Apr 18 01:01:01 2020 +0100
+
+    working on MVC
+
+commit 51ee22e17d2d769d2c3f80bb4e94cf302750198c
+Author: Arbaaz Zakir <z.arbaaz786@gmail.com>
+Date:   Thu Apr 16 19:12:46 2020 +0100
+
+    added the get statements for user, host, port to client as opposed to model
+
+commit 6b9bb0f58998eb4f1a88f06e5b3f0435bc698768
+Author: Arbaaz Zakir <z.arbaaz786@gmail.com>
+Date:   Thu Apr 16 13:36:51 2020 +0100
+
+    stated doing the view however was not sure about what fully goes in it so might start buliding the controller and then see if i can figure it out while adding to the controller
+
+commit 9a85cd13f43336d105fdc4d1fadab45a88c51cbc
+Author: Arbaaz Zakir <z.arbaaz786@gmail.com>
+Date:   Wed Apr 15 15:38:00 2020 +0100
+
+    SeeterModel class holds the user,host,port as well get methods for them. also uses State enums to change the state
+
+commit f642ef93ab3e4d29f2d4202515b3e436ec4cf37a
+Author: Arbaaz Zakir <z.arbaaz786@gmail.com>
+Date:   Wed Apr 15 15:21:55 2020 +0100
+
+    updated enums tested on early version of model to if they work which they do. also have a toString() method in enums. however currently not sure if i actually need TERMINATED state as at the point the program ends so is there a point?
+
+commit 2bfd726f26f5980f3f41bf2957c0c9b8582c2e13
+Author: Arbaaz Zakir <z.arbaaz786@gmail.com>
+Date:   Wed Apr 15 14:11:26 2020 +0100
+
+    added state enum class
+
+commit e8eaab289d04d14eee9c763b15104eb1334f87aa
+Author: Arbaaz Zakir <z.arbaaz786@gmail.com>
+Date:   Wed Apr 15 00:54:52 2020 +0100
+
+    update, wanted to roll back changes but was worried about ruining it just gonna make a seperate branch now and try to do mvc hopefully followed by command pattern tomorrow
+
+commit 00e7bdf3dec4fca5c69613550880d4fe4b139097
+Author: Arbaaz Zakir <z.arbaaz786@gmail.com>
+Date:   Wed Apr 15 00:36:24 2020 +0100
+
+    started mvc. need to focus on one thing getting too split getting hard to follow. will complete mvc followed by the command pattern design
+
+commit 11a66a3434a4b5b8e5de7bd88f90a4d1b8f2cc58
+Author: Arbaaz Zakir <z.arbaaz786@gmail.com>
+Date:   Mon Apr 6 18:56:43 2020 +0100
+
+    moved the .git folder into the seeter folder as opposed to outside it which made it so that i had too re add all other files
+
+commit aaa8fd7457514061acc106b28d868467557ecf1a
+Author: Arbaaz Zakir <z.arbaaz786@gmail.com>
+Date:   Mon Mar 9 13:47:33 2020 +0000
+
+    added test package
+
+commit c580f6bdb59b7ae0752f0df43953630c618b626b
+Author: Zakir <az16aan@herts.ac.uk>
+Date:   Thu Feb 13 14:06:44 2020 +0000
+
+    initial commit added seeter files
